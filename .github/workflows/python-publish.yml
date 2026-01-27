@@ -32,6 +32,7 @@ jobs:
         pip install build
     - name: Build package
       run: |
+        cat setup.py  # DEBUG: Check version
         rm -rf dist/
         python -m build
     - name: Publish package
