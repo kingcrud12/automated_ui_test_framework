@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: Auomated_ui_test_framework
+Version: 0.1.0
+Summary: A POM-based automated UI test framework
+Author: Hugo Testas
+Requires-Dist: selenium-ui-test-tool
+Requires-Dist: pytest
+Requires-Dist: selenium
+Dynamic: author
+Dynamic: requires-dist
+Dynamic: summary
