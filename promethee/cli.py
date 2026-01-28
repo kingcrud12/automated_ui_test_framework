@@ -1,6 +1,30 @@
 import argparse
 import os
 import shutil
+import webbrowser
+import sys
+
+def open_docs():
+    """
+    Opens the framework documentation in the default web browser.
+    """
+    try:
+        # Try to locate the docs using pkg_resources (older but reliable) or file path relative to this file
+        # Since we are in promethee/cli.py, docs are in promethee/docs/index.html
+        
+        # Method 1: Relative path from __file__
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        docs_path = os.path.join(current_dir, "docs", "index.html")
+        
+        if os.path.exists(docs_path):
+            print(f"Opening documentation: {docs_path}")
+            webbrowser.open(f"file://{docs_path}")
+        else:
+            print("Documentation file not found locally.")
+            print("You can view it online on PyPI or GitHub.")
+            
+    except Exception as e:
+        print(f"Failed to open documentation: {e}")
 
 def init_project():
     """
@@ -76,7 +100,7 @@ class ScenarioProvider:
     if not os.path.exists(conftest_path):
         with open(conftest_path, "w") as f:
             f.write("""import pytest
-from automated_ui_test_framework.conftest import driver, base_url
+from promethee.conftest import driver, base_url
 
 # You can add local fixtures here
 """)
@@ -86,7 +110,7 @@ from automated_ui_test_framework.conftest import driver, base_url
     login_scenario_path = os.path.join(base_dir, "scenarios", "login.py")
     if not os.path.exists(login_scenario_path):
         with open(login_scenario_path, "w") as f:
-            f.write("""from automated_ui_test_framework.base import Base
+            f.write("""from promethee.base import Base
 from selenium.webdriver.common.by import By
 from selenium_ui_test_tool import fill_input, click_element, wait_for_element
 
@@ -122,15 +146,18 @@ def test_login(driver, base_url):
     print("Run your tests with: pytest tests/")
 
 def main():
-    parser = argparse.ArgumentParser(description="Automated UI Test Framework CLI")
+    parser = argparse.ArgumentParser(description="Prométhée UI Test Framework CLI")
     subparsers = parser.add_subparsers(dest="command")
 
     init_parser = subparsers.add_parser("init", help="Initialize a new test project")
+    docs_parser = subparsers.add_parser("docs", help="Open the documentation in browser")
 
     args = parser.parse_args()
 
     if args.command == "init":
         init_project()
+    elif args.command == "docs":
+        open_docs()
     else:
         parser.print_help()
 

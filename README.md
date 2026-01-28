@@ -1,4 +1,4 @@
-# Automated UI Test Framework
+# Prométhée UI Framework
 
 *[English version below | Version française plus bas]*
 
@@ -13,7 +13,7 @@ This framework is designed to help you write maintainable and scalable end-to-en
 ## Features
 
 -   **Page Object Model (POM)**: Structured architecture separating page logic from test logic.
--   **Scaffolding CLI**: Quickly initialize a new project with best-practice directory structure using `automated-ui-framework init`.
+-   **Scaffolding CLI**: Quickly initialize a new project with best-practice directory structure using `promethee init`.
 -   **Built-in Utilities**: Ready-to-use helpers for Waiting, Clicking, Filling inputs (via `selenium-ui-test-tool`).
 -   **Environment Management**: Easy handling of test data and credentials.
 -   **Documentation**: Includes HTML documentation to help you get started.
@@ -23,7 +23,7 @@ This framework is designed to help you write maintainable and scalable end-to-en
 Install the package via pip:
 
 ```bash
-pip install Auomated-ui-test-framework
+pip install promethee
 ```
 
 ## Getting Started
@@ -36,7 +36,11 @@ pip install Auomated-ui-test-framework
 
 2.  **Initialize the project structure**:
     ```bash
-    automated-ui-framework init
+    promethee init
+    ```
+    To view the documentation in your browser:
+    ```bash
+    promethee docs
     ```
     This will create:
     -   `scenarios/`: For your Page Objects.
@@ -55,7 +59,7 @@ pip install Auomated-ui-test-framework
 Inherit from the `Base` class provided by the framework:
 
 ```python
-from automated_ui_test_framework.base import Base
+from promethee.base import Base
 from selenium.webdriver.common.by import By
 # Uses selenium-ui-test-tool functions internally
 
@@ -79,7 +83,7 @@ Ce framework est conçu pour vous aider à écrire des tests de bout en bout mai
 ## Fonctionnalités
 
 -   **Page Object Model (POM)** : Architecture structurée séparant la logique de la page de la logique de test.
--   **CLI d'initialisation** : Initialisez rapidement un nouveau projet avec une structure recommandée via `automated-ui-framework init`.
+-   **CLI d'initialisation** : Initialisez rapidement un nouveau projet avec une structure recommandée via `promethee init`.
 -   **Utilitaires intégrés** : Fonctions prêtes à l'emploi pour attendre, cliquer, remplir des champs (via `selenium-ui-test-tool`).
 -   **Gestion d'environnement** : Gestion facile des données de test et des identifiants.
 -   **Documentation** : Inclut une documentation HTML pour vous aider à démarrer.
@@ -89,7 +93,7 @@ Ce framework est conçu pour vous aider à écrire des tests de bout en bout mai
 Installez le paquet via pip :
 
 ```bash
-pip install Auomated-ui-test-framework
+pip install Promethee-Selenium
 ```
 
 ## Démarrage Rapide
@@ -102,7 +106,11 @@ pip install Auomated-ui-test-framework
 
 2.  **Initialisez la structure du projet** :
     ```bash
-    automated-ui-framework init
+    promethee init
+    ```
+    Pour afficher la documentation dans votre navigateur :
+    ```bash
+    promethee docs
     ```
     Cela va créer :
     -   `scenarios/` : Pour vos Page Objects.
@@ -121,7 +129,7 @@ pip install Auomated-ui-test-framework
 Héritez de la classe `Base` fournie par le framework :
 
 ```python
-from automated_ui_test_framework.base import Base
+from promethee.base import Base
 from selenium.webdriver.common.by import By
 # Utilise les fonctions selenium-ui-test-tool en interne
 
