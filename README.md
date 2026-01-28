@@ -23,7 +23,7 @@ This framework is designed to help you write maintainable and scalable end-to-en
 Install the package via pip:
 
 ```bash
-pip install promethee
+pip install promethee-selenium
 ```
 
 ## Getting Started
