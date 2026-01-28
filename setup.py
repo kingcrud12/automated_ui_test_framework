@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="promethee-selenium",
-    version="1.0.0",
+    version="1.0.3",
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
@@ -12,11 +12,12 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "promethee=promethee.cli:main",
+            "promethee-selenium=promethee.cli:main",
+            "promethee-selenium-docs=promethee.cli:open_docs",
         ],
     },
     author="Yann Dipita",
-    description="Prométhée: A POM-based automated UI test framework",
+    description="Promethee-Selenium: A POM-based automated UI test library",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     package_data={

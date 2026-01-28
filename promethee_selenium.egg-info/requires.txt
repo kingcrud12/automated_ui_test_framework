@@ -1,0 +1,3 @@
+selenium-ui-test-tool
+pytest
+selenium

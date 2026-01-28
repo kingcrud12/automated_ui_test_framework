@@ -1,0 +1,4 @@
+[console_scripts]
+promethee-selenium = promethee.cli:main
+promethee-selenium-docs = promethee.cli:open_docs
+

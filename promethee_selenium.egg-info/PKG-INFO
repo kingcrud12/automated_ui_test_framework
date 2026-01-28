@@ -1,3 +1,13 @@
+Metadata-Version: 2.1
+Name: promethee-selenium
+Version: 1.0.2
+Summary: Promethee-Selenium: A POM-based automated UI test library
+Home-page: UNKNOWN
+Author: Yann Dipita
+License: UNKNOWN
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+
 # Promethee-Selenium
 
 *[English version below | Version française plus bas]*
@@ -41,10 +51,6 @@ pip install promethee-selenium
     To view the documentation in your browser:
     ```bash
     promethee-selenium docs
-    ```
-    Or use the shortcut:
-    ```bash
-    promethee-selenium-docs
     ```
     This will create:
     -   `scenarios/`: For your Page Objects.
@@ -116,10 +122,6 @@ pip install Promethee-Selenium
     ```bash
     promethee-selenium docs
     ```
-    Ou utilisez le raccourci :
-    ```bash
-    promethee-selenium-docs
-    ```
     Cela va créer :
     -   `scenarios/` : Pour vos Page Objects.
     -   `tests/` : Pour vos scripts de test.
@@ -149,3 +151,5 @@ class LoginPage(Base):
 ```
 
 Pour plus de détails, consultez le fichier `docs/index.html` généré après l'installation.
+
+

@@ -146,7 +146,15 @@ def test_login(driver, base_url):
     print("Run your tests with: pytest tests/")
 
 def main():
-    parser = argparse.ArgumentParser(description="Prométhée UI Test Framework CLI")
+    if len(sys.argv) == 1:
+        print("\nAvailable commands:")
+        print("  promethee-selenium init    - Initialize a new test project")
+        print("  promethee-selenium docs    - Open documentation in browser")
+        print("  promethee-selenium-docs    - Open documentation in browser (shortcut)")
+        print("\nRun 'promethee-selenium <command> --help' for more info.\n")
+        sys.exit(0)
+
+    parser = argparse.ArgumentParser(description="Promethee-Selenium UI Test Library CLI")
     subparsers = parser.add_subparsers(dest="command")
 
     init_parser = subparsers.add_parser("init", help="Initialize a new test project")
