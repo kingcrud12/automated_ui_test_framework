@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="page.cliCommands.title">CLI Commands</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Header -->
+    <header class="top-header">
+        <div class="header-left">
+            <a href="#" class="logo-container">
+                <i class="fa-solid fa-fire logo-icon"></i>
+                <span class="logo-text">Promethee<span class="logo-highlight">Selenium</span></span>
+            </a>
+        </div>
+        <nav class="header-middle">
+            <a href="index.html#features" class="nav-link" data-i18n="header.features">Features</a>
+            <a href="index.html#installation" class="nav-link" data-i18n="header.installation">Installation</a>
+            <a href="index.html#quick-start" class="nav-link" data-i18n="header.quickStart">Quick Start</a>
+        </nav>
+        <div class="header-right">
+            <button id="lang-toggle" class="lang-toggle">EN</button>
+            <button id="theme-toggle" class="theme-toggle">🌙</button>
+            <a href="https://pypi.org/project/promethee-selenium/" class="btn-download" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-download"></i> <span data-i18n="header.download">Download</span></a>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Left Sidebar -->
+        <aside class="left-sidebar">
+            <div class="sidebar-section">
+                <div class="section-title" data-i18n="sidebar.home">
+                    Home
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-item" data-i18n="sidebar.gettingStarted">Getting Started</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="section-title" data-i18n="sidebar.coreLibrary">
+                    Core Library
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="page-object-model.html" class="nav-item" data-i18n="sidebar.pageObjectModel">Page Object Model</a></li>
+                    <li><a href="scaffolding.html" class="nav-item" data-i18n="sidebar.scaffolding">Scaffolding</a></li>
+                    <li><a href="built-in-utilities.html" class="nav-item" data-i18n="sidebar.builtInUtilities">Built-in Utilities</a></li>
+                    <li><a href="environment-mgmt.html" class="nav-item" data-i18n="sidebar.environmentMgmt">Environment Mgmt</a></li>
+                    <li><a href="bilingual-support.html" class="nav-item" data-i18n="sidebar.bilingualSupport">Bilingual Support</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="section-title" data-i18n="sidebar.cliCommands">
+                    CLI Commands
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="#init-command" class="nav-item" data-i18n="sidebar.init">init</a></li>
+                    <li><a href="#docs-command" class="nav-item" data-i18n="sidebar.docs">docs</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Content Area -->
+        <main class="content-area">
+            <div class="breadcrumbs">
+                <a href="index.html" data-i18n="breadcrumb.home">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="current-page" data-i18n="page.cliCommands.title">CLI Commands</span>
+            </div>
+
+            <div class="document-content">
+                <h1 class="page-title" data-i18n="page.cliCommands.title">CLI Commands</h1>
+                <p class="intro-text" data-i18n="page.cliCommands.intro">Promethee-Selenium provides a powerful command-line interface to streamline your automation workflow. This guide covers all available commands and their usage.</p>
+
+                <!-- Init Command Section -->
+                <h2 id="init-command" data-i18n="page.cliCommands.initTitle">The init Command</h2>
+                <p data-i18n="page.cliCommands.initDesc">The <code>promethee-selenium init</code> command scaffolds a complete, production-ready project structure with best-practice architecture. This is the fastest way to get started with Promethee-Selenium.</p>
+
+                <h3 data-i18n="page.cliCommands.initUsage">Usage</h3>
+                <p data-i18n="page.cliCommands.initUsageText">Run the following command in your desired project directory:</p>
+                <div class="code-block">
+                    <button class="copy-btn"><i class="fa-regular fa-copy"></i></button>
+                    <code>promethee-selenium init</code>
+                </div>
+
+                <h3 data-i18n="page.cliCommands.initOptions">Options</h3>
+                <ul data-i18n="page.cliCommands.initOptionsList">
+                    <li><strong>--project-name</strong> - Specify the project name (default: promethee-project)</li>
+                    <li><strong>--language</strong> - Choose between 'en' (English) or 'fr' (French)</li>
+                    <li><strong>--browser</strong> - Select the default browser (chrome, firefox, edge)</li>
+                </ul>
+
+                <h3 data-i18n="page.cliCommands.initExample">Example</h3>
+                <div class="code-block">
+                    <button class="copy-btn"><i class="fa-regular fa-copy"></i></button>
+                    <code>promethee-selenium init --project-name my-tests --browser chrome</code>
+                </div>
+
+                <h3 data-i18n="page.cliCommands.initOutput">Generated Structure</h3>
+                <p data-i18n="page.cliCommands.initOutputText">After running <code>init</code>, your directory will contain:</p>
+                <div class="code-block tree">
+                    <button class="copy-btn"><i class="fa-regular fa-copy"></i></button>
+                    <pre><code>my-tests/
+├── scenarios/
+│   ├── __init__.py
+│   └── login_page.py
+├── tests/
+│   ├── __init__.py
+│   └── test_login.py
+├── data/
+│   ├── credentials.csv
+│   └── config.env
+├── conftest.py
+├── pytest.ini
+└── README.md</code></pre>
+                </div>
+
+                <!-- Docs Command Section -->
+                <h2 id="docs-command" data-i18n="page.cliCommands.docsTitle">The docs Command</h2>
+                <p data-i18n="page.cliCommands.docsDesc">The <code>promethee-selenium docs</code> command opens the interactive documentation and quick-reference guide in your default browser.</p>
+
+                <h3 data-i18n="page.cliCommands.docsUsage">Usage</h3>
+                <p data-i18n="page.cliCommands.docsUsageText">Simply run:</p>
+                <div class="code-block">
+                    <button class="copy-btn"><i class="fa-regular fa-copy"></i></button>
+                    <code>promethee-selenium docs</code>
+                </div>
+
+                <h3 data-i18n="page.cliCommands.docsFeatures">Features</h3>
+                <ul data-i18n="page.cliCommands.docsFeaturesList">
+                    <li data-i18n="page.cliCommands.docsFeature1">Full HTML documentation with code examples and best practices</li>
+                    <li data-i18n="page.cliCommands.docsFeature2">Interactive Code Object Model (POM) guide</li>
+                    <li data-i18n="page.cliCommands.docsFeature3">Built-in utilities reference</li>
+                    <li data-i18n="page.cliCommands.docsFeature4">Environment management guide</li>
+                    <li data-i18n="page.cliCommands.docsFeature5">Bilingual support (English and French)</li>
+                </ul>
+
+                <h3 data-i18n="page.cliCommands.docsExample">Example</h3>
+                <div class="code-block">
+                    <button class="copy-btn"><i class="fa-regular fa-copy"></i></button>
+                    <code>promethee-selenium docs</code>
+                </div>
+                <p data-i18n="page.cliCommands.docsExampleText">This will automatically open <code>http://localhost:8000</code> in your default browser, displaying the full documentation site you are currently viewing.</p>
+
+                <h3 data-i18n="page.cliCommands.docsOptions">Tips</h3>
+                <ul data-i18n="page.cliCommands.docsTips">
+                    <li data-i18n="page.cliCommands.docsTip1">Use the language toggle to switch between English and French</li>
+                    <li data-i18n="page.cliCommands.docsTip2">Use the theme toggle to switch between light and dark modes</li>
+                    <li data-i18n="page.cliCommands.docsTip3">Bookmark this page for quick reference during development</li>
+                </ul>
+            </div>
+        </main>
+
+        <!-- Right Sidebar (TOC) -->
+        <aside class="right-sidebar">
+            <div class="toc-container">
+                <h3 class="toc-title" data-i18n="toc.onThisPage">On this Page</h3>
+                <div class="toc-line"></div>
+                <ul class="toc-list">
+                    <li><a href="#init-command" class="toc-link" data-i18n="page.cliCommands.initTitle">The init Command</a></li>
+                    <li><a href="#docs-command" class="toc-link" data-i18n="page.cliCommands.docsTitle">The docs Command</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

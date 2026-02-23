@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Object Model - Promethee-Selenium</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="top-header">
+        <div class="header-left">
+            <a href="index.html" class="logo-container">
+                <i class="fa-solid fa-fire logo-icon"></i>
+                <span class="logo-text">Promethee<span class="logo-highlight">Selenium</span></span>
+            </a>
+        </div>
+        <nav class="header-middle">
+            <a href="index.html#features" class="nav-link" data-i18n="header.features">Features</a>
+            <a href="index.html#installation" class="nav-link" data-i18n="header.installation">Installation</a>
+            <a href="index.html#quick-start" class="nav-link" data-i18n="header.quickStart">Quick Start</a>
+        </nav>
+        <div class="header-right">
+            <button id="lang-toggle" class="lang-toggle">EN</button>
+            <button id="theme-toggle" class="theme-toggle">🌙</button>
+            <a href="https://pypi.org/project/promethee-selenium/" class="btn-download" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-download"></i> <span data-i18n="header.download">Download</span></a>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <aside class="left-sidebar">
+            <div class="sidebar-section">
+                <h3 class="section-title" data-i18n="sidebar.home">Home <i class="fa-solid fa-chevron-up"></i></h3>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-item" data-i18n="sidebar.gettingStarted">Getting Started</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="section-title" data-i18n="sidebar.coreLibrary">Core Library <i class="fa-solid fa-chevron-up"></i></h3>
+                <ul class="nav-list">
+                    <li><a href="page-object-model.html" class="nav-item active" data-i18n="sidebar.pageObjectModel">Page Object Model</a></li>
+                    <li><a href="scaffolding.html" class="nav-item" data-i18n="sidebar.scaffolding">Scaffolding</a></li>
+                    <li><a href="built-in-utilities.html" class="nav-item" data-i18n="sidebar.builtInUtilities">Built-in Utilities</a></li>
+                    <li><a href="environment-mgmt.html" class="nav-item" data-i18n="sidebar.environmentMgmt">Environment Mgmt</a></li>
+                    <li><a href="bilingual-support.html" class="nav-item" data-i18n="sidebar.bilingualSupport">Bilingual Support</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="section-title" data-i18n="sidebar.cliCommands">CLI Commands <i class="fa-solid fa-chevron-down"></i></h3>
+                <ul class="nav-list" style="display: none;">
+                    <li><a href="cli-commands.html#init-command" class="nav-item" data-i18n="sidebar.init">init</a></li>
+                    <li><a href="cli-commands.html#docs-command" class="nav-item" data-i18n="sidebar.docs">docs</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <div class="breadcrumbs">
+                <span class="breadcrumb-item">Promethee-Selenium</span>
+                <span class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></span>
+                <span class="breadcrumb-item" data-i18n="sidebar.coreLibrary">Core Library</span>
+                <span class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></span>
+                <span class="breadcrumb-item current-page" data-i18n="page.pom.title">Page Object Model</span>
+            </div>
+
+            <article class="document-content">
+                <h1 class="page-title" data-i18n="page.pom.title">Page Object Model (POM)</h1>
+                <p class="intro-text" data-i18n="page.pom.intro">
+                    The <strong>Page Object Model</strong> is a design pattern that creates an object repository for storing all web elements. Promethee-Selenium natively builds on this to reduce code duplication and improve test maintenance.
+                </p>
+
+                <h2 id="concept" data-i18n="page.pom.concept">The Concept</h2>
+                <p data-i18n="page.pom.conceptText">For each UI page of an application, a corresponding page class is created. This page class is responsible for finding the WebElements of that page and executing operations on them.</p>
+
+                <h2 id="implementation" data-i18n="page.pom.implementation">Implementation</h2>
+                <p data-i18n="page.pom.implementationText">To implement your own page object, inherit from our <code>Base</code> class available in Promethee.</p>
+
+                <h3 id="example" data-i18n="page.pom.example">Example</h3>
+                <div class="code-block">
+                    <button class="copy-btn"><i class="fa-regular fa-copy"></i></button>
+                    <pre><code class="language-python">from promethee.core.base import Base
+from selenium.webdriver.common.by import By
+
+class LoginPage(Base):
+    def __init__(self, driver):
+        super().__init__(driver)
+        
+        self.username_input = (By.ID, "user-name")
+        self.password_input = (By.ID, "password")
+        self.login_button = (By.ID, "login-button")
+        
+    def login(self, username, password):
+        self.type_text(self.username_input, username)
+        self.type_text(self.password_input, password)
+        self.click_element(self.login_button)
+</code></pre>
+                </div>
+
+                <h2 id="benefits" data-i18n="page.pom.benefits">Benefits</h2>
+                <ul>
+                    <li data-i18n="page.pom.benefits.li1"><strong>Maintainability</strong>: Update the locator in the page class instead of replacing it in every test.</li>
+                    <li data-i18n="page.pom.benefits.li2"><strong>Reusability</strong>: Write the code once to get the element or perform an action, and use it across multiple scripts.</li>
+                    <li data-i18n="page.pom.benefits.li3"><strong>Readability</strong>: Test scripts read more like actual user scenarios.</li>
+                </ul>
+            </article>
+        </main>
+
+        <aside class="right-sidebar">
+            <div class="toc-container">
+                <h4 class="toc-title">On this Page</h4>
+                <div class="toc-line"></div>
+                <ul class="toc-list">
+                    <li><a href="#concept" class="toc-link" data-i18n="page.pom.concept">The Concept</a></li>
+                    <li><a href="#implementation" class="toc-link" data-i18n="page.pom.implementation">Implementation</a></li>
+                    <li><a href="#example" class="toc-link" data-i18n="page.pom.example">Example</a></li>
+                    <li><a href="#benefits" class="toc-link" data-i18n="page.pom.benefits">Benefits</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

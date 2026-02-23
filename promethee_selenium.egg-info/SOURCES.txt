@@ -5,6 +5,9 @@ promethee/__init__.py
 promethee/base.py
 promethee/cli.py
 promethee/conftest.py
+promethee/docs/getting_started_fragment.html
+promethee/docs/index.html
+promethee/docs/style.css
 promethee/scenarios/__init__.py
 promethee/utils/__init__.py
 promethee/utils/scenario_provider.py

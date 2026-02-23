@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promethee-Selenium Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="top-header">
+        <div class="header-left">
+            <a href="#" class="logo-container">
+                <i class="fa-solid fa-fire logo-icon"></i>
+                <span class="logo-text">Promethee<span class="logo-highlight">Selenium</span></span>
+            </a>
+        </div>
+        <nav class="header-middle">
+            <a href="#features" class="nav-link" data-i18n="header.features">Features</a>
+            <a href="#installation" class="nav-link" data-i18n="header.installation">Installation</a>
+            <a href="#quick-start" class="nav-link" data-i18n="header.quickStart">Quick Start</a>
+        </nav>
+        <div class="header-right">
+            <button id="lang-toggle" class="lang-toggle">EN</button>
+            <button id="theme-toggle" class="theme-toggle">🌙</button>
+            <a href="https://pypi.org/project/promethee-selenium/" class="btn-download" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-download"></i> <span data-i18n="header.download">Download</span></a>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <aside class="left-sidebar">
+            <div class="sidebar-section">
+                <h3 class="section-title" data-i18n="sidebar.home">Home <i class="fa-solid fa-chevron-up"></i></h3>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-item active" data-i18n="sidebar.gettingStarted">Getting Started</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="section-title" data-i18n="sidebar.coreLibrary">Core Library <i class="fa-solid fa-chevron-up"></i></h3>
+                <ul class="nav-list">
+                    <li><a href="page-object-model.html" class="nav-item" data-i18n="sidebar.pageObjectModel">Page Object Model</a></li>
+                    <li><a href="scaffolding.html" class="nav-item" data-i18n="sidebar.scaffolding">Scaffolding</a></li>
+                    <li><a href="built-in-utilities.html" class="nav-item" data-i18n="sidebar.builtInUtilities">Built-in Utilities</a></li>
+                    <li><a href="environment-mgmt.html" class="nav-item" data-i18n="sidebar.environmentMgmt">Environment Mgmt</a></li>
+                    <li><a href="bilingual-support.html" class="nav-item" data-i18n="sidebar.bilingualSupport">Bilingual Support</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="section-title" data-i18n="sidebar.cliCommands">CLI Commands <i class="fa-solid fa-chevron-down"></i></h3>
+                <ul class="nav-list" style="display: none;">
+                    <li><a href="cli-commands.html#init-command" class="nav-item" data-i18n="sidebar.init">init</a></li>
+                    <li><a href="cli-commands.html#docs-command" class="nav-item" data-i18n="sidebar.docs">docs</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <div class="breadcrumbs">
+                <span class="breadcrumb-item">Promethee-Selenium</span>
+                <span class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></span>
+                <span class="breadcrumb-item" data-i18n="sidebar.home">Home</span>
+                <span class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></span>
+                <span class="breadcrumb-item current-page" data-i18n="page.gettingStarted.title">Getting Started</span>
+            </div>
+
+            <article class="document-content">
+                <h1 class="page-title" data-i18n="page.gettingStarted.title">Getting Started</h1>
+                <p class="intro-text" data-i18n="page.gettingStarted.intro">
+                    <strong>Promethee-Selenium</strong> is a robust, Page Object Model (POM) based library for automated
+                    UI testing using Selenium and Pytest.
+                    It is designed to streamline your end-to-end testing workflow by providing a structured
+                    architecture, ensuring your tests are maintainable, scalable, and easy to read.
+                </p>
+
+                <h2 id="features" data-i18n="page.gettingStarted.featuresTitle">Features</h2>
+                <ul>
+                    <li data-i18n="page.gettingStarted.features.li1"><strong>Page Object Model (POM)</strong>: Enforces a clean separation between page interactions (locators, actions) and test logic (assertions, workflows).</li>
+                    <li data-i18n="page.gettingStarted.features.li2"><strong>Interactive CLI</strong>: A user-friendly command-line interface to guide you through project initialization and documentation.</li>
+                    <li data-i18n="page.gettingStarted.features.li3"><strong>Scaffolding</strong>: Quickly generate a production-ready project structure with <code>promethee-selenium init</code>.</li>
+                    <li data-i18n="page.gettingStarted.features.li4"><strong>Built-in Utilities</strong>: A rich set of helper functions for common Selenium actions (clicking, typing, waiting).</li>
+                    <li data-i18n="page.gettingStarted.features.li5"><strong>Environment Management</strong>: Native support for managing test environments and credentials securely.</li>
+                    <li data-i18n="page.gettingStarted.features.li6"><strong>Bilingual Support</strong>: The CLI and documentation are available in both English and French.</li>
+                </ul>
+
+                <h2 id="installation" data-i18n="page.gettingStarted.installationTitle">Installation</h2>
+                <p data-i18n="page.gettingStarted.installationText">Install the package easily via pip:</p>
+                <div class="code-block">
+                    <button class="copy-btn"><i class="fa-regular fa-copy"></i></button>
+                    <code class="language-bash">pip install promethee-selenium</code>
+                </div>
+
+                <h2 id="quick-start" data-i18n="page.gettingStarted.quickStartTitle">Quick Start</h2>
+                <h3 id="step-1" data-i18n="page.gettingStarted.step1Title">1. Launch the CLI</h3>
+                <p data-i18n="page.gettingStarted.step1Text">After installation, run the following command to access the interactive menu:</p>
+                <div class="code-block">
+                    <button class="copy-btn"><i class="fa-regular fa-copy"></i></button>
+                    <code class="language-bash">promethee-selenium</code>
+                </div>
+                <p data-i18n="page.gettingStarted.step1Note">You will be prompted to select your language (English/French) and then choose an action.</p>
+
+                <h3 id="step-2" data-i18n="page.gettingStarted.step2Title">2. Initialize a Project</h3>
+                <p data-i18n="page.gettingStarted.step2Text">Select the <strong>Init</strong> option from the menu or run:</p>
+                <div class="code-block">
+                    <button class="copy-btn"><i class="fa-regular fa-copy"></i></button>
+                    <code class="language-bash">promethee-selenium init</code>
+                </div>
+                <p data-i18n="page.gettingStarted.step2Note">This creates a standard directory layout:</p>
+                <ul>
+                    <li><code>scenarios/</code>: For your Page Object classes.</li>
+                    <li><code>tests/</code>: For your Pytest test scripts.</li>
+                    <li><code>data/</code>: For configuration files and test data.</li>
+                    <li><code>utils/</code>: For project-specific utilities.</li>
+                    <li><code>conftest.py</code>: Pytest configuration with pre-configured fixtures.</li>
+                </ul>
+
+                <h3 id="step-3" data-i18n="page.gettingStarted.step3Title">3. Run Your Tests</h3>
+                <p data-i18n="page.gettingStarted.step3Text">Execute your tests using pytest:</p>
+                <div class="code-block">
+                    <button class="copy-btn"><i class="fa-regular fa-copy"></i></button>
+                    <code class="language-bash">pytest tests/</code>
+                </div>
+
+            </article>
+        </main>
+
+        <aside class="right-sidebar">
+            <div class="toc-container">
+                <h4 class="toc-title" data-i18n="toc.onThisPage">On this Page</h4>
+                <div class="toc-line"></div>
+                <ul class="toc-list">
+                    <li><a href="#features" class="toc-link" data-i18n="page.gettingStarted.featuresTitle">Features</a></li>
+                    <li><a href="#installation" class="toc-link" data-i18n="page.gettingStarted.installationTitle">Installation</a></li>
+                    <li>
+                        <a href="#quick-start" class="toc-link" data-i18n="page.gettingStarted.quickStartTitle">Quick Start</a>
+                        <ul class="toc-sublist">
+                            <li><a href="#step-1" class="toc-link sub-link" data-i18n="page.gettingStarted.step1Title">1. Launch CLI</a></li>
+                            <li><a href="#step-2" class="toc-link sub-link" data-i18n="page.gettingStarted.step2Title">2. Initialize Project</a></li>
+                            <li><a href="#step-3" class="toc-link sub-link" data-i18n="page.gettingStarted.step3Title">3. Run Tests</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

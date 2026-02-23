@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilingual Support - Promethee-Selenium</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="top-header">
+        <div class="header-left">
+            <a href="index.html" class="logo-container">
+                <i class="fa-solid fa-fire logo-icon"></i>
+                <span class="logo-text">Promethee<span class="logo-highlight">Selenium</span></span>
+            </a>
+        </div>
+        <nav class="header-middle">
+            <a href="index.html#features" class="nav-link" data-i18n="header.features">Features</a>
+            <a href="index.html#installation" class="nav-link" data-i18n="header.installation">Installation</a>
+            <a href="index.html#quick-start" class="nav-link" data-i18n="header.quickStart">Quick Start</a>
+        </nav>
+        <div class="header-right">
+            <button id="lang-toggle" class="lang-toggle">EN</button>
+              <button id="theme-toggle" class="theme-toggle">🌙</button>
+              <a href="https://pypi.org/project/promethee-selenium/" class="btn-download" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-download"></i> Download</a>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <aside class="left-sidebar">
+            <div class="sidebar-section">
+                <h3 class="section-title" data-i18n="sidebar.home">Home <i class="fa-solid fa-chevron-up"></i></h3>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-item" data-i18n="sidebar.gettingStarted">Getting Started</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="section-title" data-i18n="sidebar.coreLibrary">Core Library <i class="fa-solid fa-chevron-up"></i></h3>
+                <ul class="nav-list">
+                    <li><a href="page-object-model.html" class="nav-item" data-i18n="sidebar.pageObjectModel">Page Object Model</a></li>
+                    <li><a href="scaffolding.html" class="nav-item" data-i18n="sidebar.scaffolding">Scaffolding</a></li>
+                    <li><a href="built-in-utilities.html" class="nav-item" data-i18n="sidebar.builtInUtilities">Built-in Utilities</a></li>
+                    <li><a href="environment-mgmt.html" class="nav-item" data-i18n="sidebar.environmentMgmt">Environment Mgmt</a></li>
+                    <li><a href="bilingual-support.html" class="nav-item active" data-i18n="sidebar.bilingualSupport">Bilingual Support</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="section-title" data-i18n="sidebar.cliCommands">CLI Commands <i class="fa-solid fa-chevron-down"></i></h3>
+                <ul class="nav-list" style="display: none;">
+                    <li><a href="cli-commands.html#init-command" class="nav-item" data-i18n="sidebar.init">init</a></li>
+                    <li><a href="cli-commands.html#docs-command" class="nav-item" data-i18n="sidebar.docs">docs</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <div class="breadcrumbs">
+                <span class="breadcrumb-item">Promethee-Selenium</span>
+                <span class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></span>
+                <span class="breadcrumb-item" data-i18n="sidebar.coreLibrary">Core Library</span>
+                <span class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></span>
+                <span class="breadcrumb-item current-page" data-i18n="page.bilingual.title">Bilingual Support</span>
+            </div>
+
+            <article class="document-content">
+                <h1 class="page-title" data-i18n="page.bilingual.title">Bilingual Support</h1>
+                <p class="intro-text" data-i18n="page.bilingual.intro">
+                    Promethee-Selenium breaks down language barriers. Enjoy complete framework interactions, documentation, and error handling natively in both <strong>English</strong> and <strong>French</strong>.
+                </p>
+
+                <h2 id="cli">In the CLI</h2>
+                <p>When you start the interactive CLI using <code>promethee-selenium</code>, the very first prompt will ask you to select your preferred language interaction. Every menu options, confirmation messages, and hints automatically translates to match your preference.</p>
+                
+                <h3 id="example-cli">CLI Demonstration</h3>
+                <div class="code-block">
+                    <button class="copy-btn"><i class="fa-regular fa-copy"></i></button>
+                    <code class="language-bash">? Select Language / Choisissez la langue: 
+  English
+❯ Français</code>
+                </div>
+
+                <h2 id="documentation">In the Documentation</h2>
+                <p>Along with English, full French guides are continuously updated, ensuring that teams from diverse linguistic backgrounds achieve absolute clarity over the implementation structure.</p>
+            </article>
+        </main>
+
+        <aside class="right-sidebar">
+            <div class="toc-container">
+                <h4 class="toc-title">On this Page</h4>
+                <div class="toc-line"></div>
+                <ul class="toc-list">
+                    <li><a href="#cli" class="toc-link">In the CLI</a></li>
+                    <li><a href="#example-cli" class="toc-link">CLI Demonstration</a></li>
+                    <li><a href="#documentation" class="toc-link">In the Documentation</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
